@@ -1,0 +1,11 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+li {
+  box-decoration-break: slice;
+  /* background-color: darkslategray; */
+  margin: 2vh 0vh;
+  list-style: none;
+  border-radius: 5%;
+}
