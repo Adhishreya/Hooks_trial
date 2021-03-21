@@ -20,6 +20,24 @@ export default function App() {
 
   return (
     <div className="App">
+      <div class="cnt">
+        <label class="label" for="check">
+          <input
+            type="checkbox"
+            id="check"
+            onChange={(e) => {
+              var res = e.target.checked;
+              if (res)
+                document.documentElement.setAttribute("data-theme", "dark");
+              else document.documentElement.setAttribute("data-theme", "light");
+            }}
+          />
+          <div class="toggle"></div>
+          <section>
+            <em>Dark mode</em>
+          </section>
+        </label>
+      </div>
       <article>
         <h1>Getting started with Hooks</h1>
         <p style={{ fontSize: "2rem", fontStyle: "italic" }}>
@@ -67,8 +85,13 @@ export default function App() {
           </li>
         </p>
       </article>
-      <button>
+      <button id="liked">
         <span role="img">👍</span>
+      </button>
+
+      {liked}
+      <button id="dislike">
+        <span role="img">👎</span>
       </button>
 
       {liked}

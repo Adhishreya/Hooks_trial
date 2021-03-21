@@ -1,6 +1,15 @@
-[dark-theme="dark"] {
+:root {
+  --primary-color: #eb9c9c;
+  --secondary-color: #8ef884;
+  --bg-color: #cfd2d6;
+  --font-color: #2b313d;
 }
-
+[data-theme="dark"] {
+  --primary-color: #b91c1c;
+  --secondary-color: #fecaca;
+  --bg-color: #4b5563;
+  --font-color: #e5e7eb;
+}
 .App {
   font-family: sans-serif;
   text-align: center;
@@ -20,6 +29,10 @@ hr {
   height: 0.1rem;
   background: gray;
 }
+body {
+  background-color: var(--bg-color);
+  color: var(--font-color);
+}
 code {
   background: black;
   color: white;
@@ -30,4 +43,58 @@ code {
 }
 iframe {
   overflow: none;
+}
+.cnt {
+  width: fit-content;
+  /* left: 0; */
+  margin-left: auto;
+  display: flex;
+  padding: 0.5rem;
+  align-items: center;
+}
+section {
+  margin-left: 60px;
+}
+.label input {
+  display: none;
+}
+
+.label {
+  display: inline-block;
+  height: 40px;
+  width: 90px;
+  position: relative;
+}
+.toggle {
+  transition: 0.5s;
+  position: absolute;
+  background-color: white;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 50px;
+  height: 30px;
+}
+.toggle {
+  border-radius: 0.5rem;
+}
+.toggle:before {
+  position: absolute;
+  content: "";
+  width: 25px;
+  height: 30px;
+  background-color: wheat;
+  left: 2px;
+  transition: 0.5s;
+}
+.toggle:before {
+  border-radius: 50%;
+}
+input:checked + .toggle:before {
+  transform: translateX(30px);
+}
+input:checked + .toggle {
+  /* background-color: gray; */
+  background-color: transparent;
 }
