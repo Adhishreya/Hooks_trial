@@ -10,18 +10,22 @@ const data = Object.keys(datas);
 // console.log(data);
 export default function App() {
   const [liked, incliked] = useState(0);
-  function likedit() {
-    const nliked = liked + 1;
-    incliked(nliked);
-  }
+  const [up, uparr] = useState(0);
+  useEffect(() => {
+    console.log("effect" + up);
+  });
+  // function likedit() {
+  //   const nliked = liked + 1;
+  //   incliked(nliked);
+  // }
   // useEffect(() => {
   //   console.log("clicked " + { liked } + " times");
   // });
 
   return (
     <div className="App">
-      <div class="cnt">
-        <label class="label" for="check">
+      <div className="cnt">
+        <label className="label" htmlFor="check">
           <input
             type="checkbox"
             id="check"
@@ -32,7 +36,7 @@ export default function App() {
               else document.documentElement.setAttribute("data-theme", "light");
             }}
           />
-          <div class="toggle"></div>
+          <div className="toggle"></div>
           <section>
             <em>Dark mode</em>
           </section>
@@ -84,8 +88,30 @@ export default function App() {
             didComponentMount, it runs everytime the DOM changes
           </li>
         </p>
+
+        <div className="demo1">
+          <button
+            onClick={() => {
+              uparr(up + 1);
+              console.log("render-dom" + up);
+            }}
+          >
+            <span role="img">↥</span>
+          </button>
+          {/* <p className="console">{expl}</p> */}
+        </div>
       </article>
-      <button id="liked">
+      <article>
+        When the button is pressed, the state is updated and Dom is re-rendered
+        to the user
+      </article>
+      <button
+        id="liked"
+        onClick={() => {
+          incliked(liked + 1);
+          console.log("render-dom" + liked);
+        }}
+      >
         <span role="img">👍</span>
       </button>
 
@@ -95,10 +121,7 @@ export default function App() {
       </button>
 
       {liked}
-      <article>
-        When the button is pressed, the state is updated and Dom is re-rendered
-        to the user
-      </article>
+
       <hr />
 
       <ul>
