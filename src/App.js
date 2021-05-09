@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./styles.css";
-
+import References from "./References.js";
 const datas = {
   "./twitter.svg": "https://twitter.com/AdhishreyaP",
   "./github.svg": "https://github.com/Adhishreya",
@@ -13,7 +13,7 @@ export default function App() {
   const [up, uparr] = useState(0);
   useEffect(() => {
     console.log("effect" + up);
-  });
+  }, [liked]);
   // function likedit() {
   //   const nliked = liked + 1;
   //   incliked(nliked);
@@ -123,7 +123,7 @@ export default function App() {
       {liked}
 
       <hr />
-
+      <References />
       <ul>
         {data.map((item, index) => {
           return (
