@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./styles.css";
 import References from "./References.js";
+import AsyncComp from "./AsyncComp.js";
 const datas = {
   "./twitter.svg": "https://twitter.com/AdhishreyaP",
   "./github.svg": "https://github.com/Adhishreya",
@@ -124,6 +125,8 @@ export default function App() {
 
       <hr />
       <References />
+      <hr />
+      <AsyncComp />
       <ul>
         {data.map((item, index) => {
           return (
