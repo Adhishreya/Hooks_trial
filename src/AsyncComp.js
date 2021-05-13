@@ -28,6 +28,7 @@ const AsyncComp = () => {
   return (
     <div>
       <h5>Async trial</h5>
+      <p>Asynchronously fetch data using api</p>
       <input type="text" onChange={(e) => setQuery(e.target.value)} />
       <p>Search Resuts on {query}</p>
       {error && query && <h5>unable to find {query}</h5>}
