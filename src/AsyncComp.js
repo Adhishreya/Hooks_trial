@@ -3,7 +3,7 @@ const AsyncComp = () => {
   const [query, setQuery] = useState("");
   const [result, setResult] = useState("");
   const [error, setError] = useState(false);
-  const [success, setSuccess] = useState(false);
+  // const [success, setSuccess] = useState(false);
   useEffect(() => {
     async function find() {
       try {
@@ -13,11 +13,14 @@ const AsyncComp = () => {
         console.log(list.items[0].volumeInfo);
         setResult(list.items[1].volumeInfo);
         // console.log(result);
-        setSuccess(true);
+        // setSuccess(true);
+        if (list.items.length > 0) {
+          setError(false);
+        }
       } catch (error) {
         console.log("error");
         setError(true);
-        setSuccess(false);
+        // setSuccess(false);
       }
     }
     find();
@@ -28,13 +31,15 @@ const AsyncComp = () => {
       <input type="text" onChange={(e) => setQuery(e.target.value)} />
       <p>Search Resuts on {query}</p>
       {error && query && <h5>unable to find {query}</h5>}
-      {success && (
+      {!error && query ? (
         <div>
           {" "}
           <h6> {result.title}</h6>
-          <h6>~{result.authors[0]}</h6>
+          {/* {result.authors[0] !== "undefined" && <h6>~{result.authors[0]}</h6>} */}
           <code>{result.description}</code>
         </div>
+      ) : (
+        <div></div>
       )}
     </div>
   );
