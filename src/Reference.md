@@ -5,3 +5,5 @@
 - https://levelup.gitconnected.com/react-hooks-gotchas-setstate-in-async-effects-d2fd84b02305
 
 * https://developers.google.com/books/docs/v1/reference/?apix=true
+
+* Day 1= https://youtu.be/f687hBjwFcM?t=1201

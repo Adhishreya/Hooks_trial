@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./styles.css";
 import References from "./References.js";
 import AsyncComp from "./AsyncComp.js";
+import LayoutEff from "./LayoutEff";
 const datas = {
   "./twitter.svg": "https://twitter.com/AdhishreyaP",
   "./github.svg": "https://github.com/Adhishreya",
@@ -11,6 +12,7 @@ const data = Object.keys(datas);
 // console.log(data);
 export default function App() {
   const [liked, incliked] = useState(0);
+  const [disliked, setDisliked] = useState(0);
   const [up, uparr] = useState(0);
   useEffect(() => {
     console.log("effect" + up);
@@ -117,16 +119,22 @@ export default function App() {
       </button>
 
       {liked}
-      <button id="dislike">
+      <button
+        id="dislike"
+        onClick={() => setDisliked((CurrentDisliked) => CurrentDisliked + 1)}
+      >
         <span role="img">👎</span>
       </button>
 
-      {liked}
+      {disliked}
 
       <hr />
       <References />
       <hr />
       <AsyncComp />
+      <hr />
+      <LayoutEff />
+      <hr />
       <ul>
         {data.map((item, index) => {
           return (
