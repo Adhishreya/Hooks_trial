@@ -37,7 +37,11 @@ const AsyncComp = () => {
           {" "}
           <h6> {result.title}</h6>
           {/* {result.authors[0] !== "undefined" && <h6>~{result.authors[0]}</h6>} */}
-          <code>{result.description}</code>
+          {result.description == null ? (
+            <p>No description available</p>
+          ) : (
+            <code>{result.description}</code>
+          )}
         </div>
       ) : (
         <div></div>
