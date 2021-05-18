@@ -3,6 +3,8 @@ import "./styles.css";
 import References from "./References.js";
 import AsyncComp from "./AsyncComp.js";
 import LayoutEff from "./LayoutEff";
+import Memo from "./Memo.js";
+import { GitHub, LinkedIn, Twitter } from "@material-ui/icons";
 const datas = {
   "./twitter.svg": "https://twitter.com/AdhishreyaP",
   "./github.svg": "https://github.com/Adhishreya",
@@ -135,7 +137,10 @@ export default function App() {
       <hr />
       <LayoutEff />
       <hr />
-      <ul>
+      <Memo />
+      <hr />
+
+      {/* <ul>
         {data.map((item, index) => {
           return (
             <li key={index} className="connect">
@@ -145,7 +150,25 @@ export default function App() {
             </li>
           );
         })}
-      </ul>
+      </ul> */}
+
+      <div>
+        <a href="https://twitter.com/AdhishreyaP" target="_blank">
+          {" "}
+          <Twitter />
+        </a>
+        <a href="https://github.com/Adhishreya" target="_blank">
+          {" "}
+          <GitHub />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/adhishreya-p-129376167/"
+          target="_blank"
+        >
+          {" "}
+          <LinkedIn />
+        </a>
+      </div>
     </div>
   );
 }

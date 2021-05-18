@@ -16,6 +16,7 @@
 }
 a {
   color: var(--font-color);
+  text-decoration: none;
 }
 li {
   box-decoration-break: slice;
