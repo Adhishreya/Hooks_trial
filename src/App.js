@@ -4,6 +4,7 @@ import References from "./References.js";
 import AsyncComp from "./AsyncComp.js";
 import LayoutEff from "./LayoutEff";
 import Memo from "./Memo.js";
+import Refer from "./Refer.js";
 import { GitHub, LinkedIn, Twitter } from "@material-ui/icons";
 const datas = {
   "./twitter.svg": "https://twitter.com/AdhishreyaP",
@@ -138,6 +139,8 @@ export default function App() {
       <LayoutEff />
       <hr />
       <Memo />
+      <hr />
+      <Refer />
       <hr />
 
       {/* <ul>
